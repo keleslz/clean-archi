@@ -1,0 +1,4 @@
+create_message :
+    path: /messages
+    controller: App\UserInterface\Controller\MessageController::create
+    methods: POST
