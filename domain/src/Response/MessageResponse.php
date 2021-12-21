@@ -2,14 +2,14 @@
 
 namespace Keleslz\Domain\Response;
 
+use Keleslz\Domain\Data\Entity\UserInterface;
+use Keleslz\Domain\Request\MessageRequestInterface;
+
 class MessageResponse implements MessageResponseInterface
 {
     private bool $isSuccess = false;
-
-    public function getMessage(): string
-    {
-        return $this->isSuccess;
-    }
+    private string $idUser = '';
+    private string $content = '';
 
     public function setIsSuccess(): self
     {
@@ -21,5 +21,21 @@ class MessageResponse implements MessageResponseInterface
     {
         $this->isSuccess = false;
         return $this;
+    }
+
+    public function getMessage(): string
+    {
+        return $this->content;
+    }
+
+    public function getUser(): string
+    {
+        return $this->idUser;
+    }
+
+    public function setData(UserInterface $user, MessageRequestInterface $request) : void
+    {
+        $this->idUser = $user->getId();
+        $this->content = $request->getMessage();
     }
 }

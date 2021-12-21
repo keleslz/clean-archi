@@ -19,17 +19,17 @@ class MessageRequest extends AbstractRequest implements MessageRequestInterface
         $this->message = $this->getKey('message');
     }
 
-    private function getKey(string $key) : ?string
+    private function getKey(string $key) : string
     {
-        return $this->data[$key] ?? null;
+        return $this->data[$key] ?? '';
     }
 
-    public function getUser(): ?string
+    public function getUser(): string
     {
         return $this->user;
     }
 
-    public function getMessage(): ?string
+    public function getMessage(): string
     {
         return $this->message;
     }
