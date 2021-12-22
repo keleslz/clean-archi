@@ -8,9 +8,9 @@ use Doctrine\ORM\EntityManagerInterface;
 use Keleslz\Domain\Data\Entity\UserInterface;
 use Keleslz\Domain\Presenter\MessagePresenterInterface;
 use Keleslz\Domain\Request\MessageRequestInterface;
-use Keleslz\Domain\Response\MessageResponse;
+use Keleslz\Domain\Response\CreateMessageResponse;
 
-class MessageUseCase implements MessageUseCaseInterface
+class CreateMessageUseCase implements MessageUseCaseInterface
 {
     public function __construct(
         private EntityManagerInterface $em
@@ -19,7 +19,7 @@ class MessageUseCase implements MessageUseCaseInterface
 
     public function execute(MessageRequestInterface $request, MessagePresenterInterface $presenter): void
     {
-        $response = new MessageResponse();
+        $response = new CreateMessageResponse();
 
         /** Ma logique à executer **/
         $user = $this->insertMessage($request);

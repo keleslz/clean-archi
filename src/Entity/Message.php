@@ -4,11 +4,13 @@ namespace App\Entity;
 
 use App\Repository\MessageRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Keleslz\Domain\Data\Entity\MessageInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=MessageRepository::class)
  */
-class Message
+class Message implements MessageInterface
 {
     /**
      * @ORM\Id

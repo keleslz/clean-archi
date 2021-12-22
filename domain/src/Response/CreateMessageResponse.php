@@ -5,7 +5,7 @@ namespace Keleslz\Domain\Response;
 use Keleslz\Domain\Data\Entity\UserInterface;
 use Keleslz\Domain\Request\MessageRequestInterface;
 
-class MessageResponse implements MessageResponseInterface
+class CreateMessageResponse implements MessageResponseInterface
 {
     private bool $isSuccess = false;
     private string $idUser = '';
