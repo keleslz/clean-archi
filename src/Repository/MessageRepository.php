@@ -5,7 +5,6 @@ namespace App\Repository;
 use App\Entity\Message;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use Keleslz\Domain\Data\Repository\MessageRepositoryInterface;
 
 /**
  * @method Message|null find($id, $lockMode = null, $lockVersion = null)
@@ -13,7 +12,7 @@ use Keleslz\Domain\Data\Repository\MessageRepositoryInterface;
  * @method Message[]    findAll()
  * @method Message[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class MessageRepository extends ServiceEntityRepository implements MessageRepositoryInterface
+class MessageRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
