@@ -17,20 +17,17 @@ class Message implements MessageInterface
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    #[Groups(['list_all'])]
     private $id;
 
     /**
      * @ORM\Column(type="string", length=1000)
      */
-    #[Groups(['list_all'])]
     private $content;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="messages")
      * @ORM\JoinColumn(nullable=true)
      */
-    #[Groups(['list_all'])]
     private $user;
 
     public function getId(): ?int
